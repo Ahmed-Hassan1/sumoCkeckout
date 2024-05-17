@@ -38,17 +38,40 @@ def create_order():
   print(id)
   response = send_signed_request(
     'POST',
-    '/binancepay/openapi/order',
-    {
-      'merchantId': '523839444',
-      'merchantTradeNo': id,
-      'tradeType': 'WEB',
-      'totalFee': '1',
-      'currency': 'USDT',
-      'productType': 'Application',
-      'productName': 'Sumo',
-      'productDetail': 'Application to install'
+    #'/binancepay/openapi/order',
+    # {
+    #   'merchantId': '523839444',
+    #   'merchantTradeNo': id,
+    #   'tradeType': 'WEB',
+    #   'totalFee': '0.01',
+    #   'currency': 'USDT',
+    #   'productType': 'Application',
+    #   'productName': 'Sumo',
+    #   'productDetail': 'Application to install',
+    #   'returnUrl': 'https://e14f-197-49-33-90.ngrok-free.app/callback'
+    # }
+    '/binancepay/openapi/v3/order',
+      {
+        "env": {
+          "terminalType": "WEB"
+        },
+        "merchantTradeNo": id,
+        "orderAmount": 0.01,
+        "currency": "USDT",
+        "description": "Sumo Files",
+        "goodsDetails": [
+          {
+            "goodsType": "02",
+            "goodsCategory": "Z000",
+            "referenceGoodsId": "12345678",
+            "goodsName": "SUMO",
+            "goodsDetail": "Sump application files"
+          }
+        ],
+        'returnUrl': 'https://e14f-197-49-33-90.ngrok-free.app/callback',
+        'cancelUrl': 'https://e14f-197-49-33-90.ngrok-free.app/fail'
     }
+    
   )
   print(response)
   return response

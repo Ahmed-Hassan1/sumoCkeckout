@@ -5,5 +5,6 @@ from .views import *
 urlpatterns = [
     path('',homePage,name="home"),
     path('checkout',test,name="checkout"),
-    path('callback',callback,name="callBack")
+    path('callback',callback,name="callBack"),
+    path('fail',fail,name="fail")
 ]
