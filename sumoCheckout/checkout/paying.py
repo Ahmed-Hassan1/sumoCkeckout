@@ -68,8 +68,8 @@ def create_order():
             "goodsDetail": "Sump application files"
           }
         ],
-        'returnUrl': 'https://e14f-197-49-33-90.ngrok-free.app/callback',
-        'cancelUrl': 'https://e14f-197-49-33-90.ngrok-free.app/fail'
+        'returnUrl': 'https://ddf6-197-49-73-114.ngrok-free.app//callback',
+        'cancelUrl': 'https://ddf6-197-49-73-114.ngrok-free.app//fail'
     }
     
   )

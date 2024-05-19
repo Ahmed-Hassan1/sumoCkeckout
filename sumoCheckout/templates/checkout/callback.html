@@ -8,12 +8,17 @@
     <title>SUMO</title>
 </head>
 <body style="background-color: #96a2fe; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh">
-    <h1 style="text-align: center; width: 100%; color: white; font-size: 3rem;">SUMO STRATEGY</h1>
-    <p>TESTED OVER 500 TIMES</p>
+    <h4 style="color: green; margin-bottom: 10px;">PAYMENT SUCCESSFULL</h4>
+    <h4 style="color: green; margin-bottom: 35px;">YOU CAN DOWNLOAD NOW</h4>
+    
+    <a href="{{file.upload.url}}" class="btn btn-primary px-4 py-2" style="font-size: large; font-weight: 600;" download id="redirect"> Download File</a>
 
-    <h2>WITH 100 % WIN RATE</h2>
-    <p>FOREX & CRYPTO & BINARY OPTIONS</p>
-    <h4 style="color: green;">NOW DOWNLOAD THE FILE FROM BELOW</h4>
-    <a href="{{file.upload.url}}" class="btn btn-primary px-4 py-3" style="font-size: large; font-weight: 600;" download> Download File</a>
+    <script>
+        const element=document.getElementById("redirect");
+
+        element.onclick=function(){
+            window.location = "{% url 'home' %}";
+        }
+    </script>
 </body>
 </html>
